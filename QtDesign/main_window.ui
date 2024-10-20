@@ -25,16 +25,6 @@
   <property name="windowTitle">
    <string>Практическая работа №4</string>
   </property>
-  <widget class="QTableView" name="tableView_information">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>190</y>
-     <width>831</width>
-     <height>241</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
@@ -77,7 +67,7 @@
      <x>20</x>
      <y>80</y>
      <width>461</width>
-     <height>31</height>
+     <height>73</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -103,10 +93,10 @@
   <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>10</y>
-     <width>301</width>
-     <height>138</height>
+     <x>510</x>
+     <y>20</y>
+     <width>292</width>
+     <height>137</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -125,6 +115,20 @@
     <property name="spacing">
      <number>5</number>
     </property>
+    <item row="4" column="1">
+     <widget class="QRadioButton" name="radioButton_ascending">
+      <property name="text">
+       <string>По возрастанию</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QRadioButton" name="radioButton_descending">
+      <property name="text">
+       <string>По убыванию</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0">
      <widget class="QLabel" name="label_3">
       <property name="text">
@@ -132,36 +136,77 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
-     <widget class="QRadioButton" name="radioButton_descending">
-      <property name="text">
-       <string>По убыванию</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QRadioButton" name="radioButton_ascending">
-      <property name="text">
-       <string>По возрастанию</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" rowspan="2">
+    <item row="4" column="0" rowspan="2">
      <widget class="QScrollArea" name="scrollArea_field_for_sorting">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>0</y>
-         <width>168</width>
-         <height>69</height>
+         <y>-78</y>
+         <width>142</width>
+         <height>157</height>
         </rect>
        </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_sort_client">
+          <property name="text">
+           <string>Клиент</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_sort_orderdata">
+          <property name="text">
+           <string>Дата заказа</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_sort_telephone">
+          <property name="text">
+           <string>Телефон</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_sort_email">
+          <property name="text">
+           <string>Почта</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_sort_orderstatus">
+          <property name="text">
+           <string>Статус заказа</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>821</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTableView" name="tableView_information"/>
     </item>
    </layout>
   </widget>

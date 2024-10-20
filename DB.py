@@ -56,5 +56,37 @@ class BdApi:
             return None
 
 
+    def sort_data(self, field=None):
+        # Определение порядка сортировки (по возрастанию или по убыванию)
+        sort_order = "ASC" if self.ui.radioButton_ascending.isChecked() else "DESC"
+
+        # Если поле не указано, выходим
+        if not field:
+            return
+
+        # Выполнение SQL-запроса для сортировки данных по выбранному полю
+        try:
+            with self.DB.connection.cursor() as cursor:
+                sql_query = f"SELECT * FROM information ORDER BY {field} {sort_order};"
+                cursor.execute(sql_query)
+                sorted_data = cursor.fetchall()
+
+                # Обновление таблицы с отсортированными данными
+                self.update_table(sorted_data)
+        except pymysql.MySQLError as e:
+            print(f"Ошибка при выполнении запроса: {e}")
+
+    def fetch_sorted_data(self, field_name, sort_order):
+        try:
+            with self.connection.cursor() as cursor:
+                sql_query = f"SELECT * FROM information ORDER BY {field_name} {sort_order};"
+                cursor.execute(sql_query)
+                results = cursor.fetchall()
+                return results
+        except pymysql.MySQLError as e:
+            print(f"Ошибка при выполнении запроса: {e}")
+            return None
+
+
 DB = BdApi()
 
