@@ -21,6 +21,10 @@ class Main_window(QtWidgets.QMainWindow):
         # Настройка динамического размера таблицы
         self.ui.tableView_information.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
 
+        self.ui.pushButton_filter.clicked.connect(self.filter_data)
+        self.ui.pushButton_show_all.clicked.connect(self.load_data)
+        self.ui.pushButton_search.clicked.connect(self.search_data)
+        self.ui.pushButton_search.clicked.connect(self.search_data)
         # Подключаем кнопки для выбора полей
         self.ui.pushButton_sort_client.clicked.connect(lambda: self.sort_data("client_name"))
         self.ui.pushButton_sort_orderdata.clicked.connect(lambda: self.sort_data("order_data"))
