@@ -32,7 +32,7 @@ class BdApi:
         try:
             with self.connection.cursor() as cursor:
                 sql_query = """
-                SELECT client_name, order_data, order_status
+                SELECT client_name,order_name, order_data, order_status
                 FROM information
                 WHERE client_name = %s
                 """
